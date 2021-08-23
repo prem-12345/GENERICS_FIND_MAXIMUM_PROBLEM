@@ -12,51 +12,15 @@ package com.bridgelabz.generics;
 public class FindMaximum {
 
     /**
-     * UC1 Given three integrs find the maximum
+     * Refactor all the three to one Generic Method and find maximum
      *
      * @author prem
-     * @version 11.1
+     * @version 11.4
      * @since 23/08/2021
      */
 
-    public Integer getMax(Integer firstValue, Integer secondValue, Integer thirdValue) {
-        Integer max = firstValue;
-        if (secondValue.compareTo(max) > 0)
-            max = secondValue;
-        if (thirdValue.compareTo(max) > 0)
-            max = thirdValue;
-
-        return max;
-    }
-
-    /**
-     * UC2 Given three flot value find the maximum
-     *
-     * @author prem
-     * @version 11.2
-     * @since 23/08/2021
-     */
-
-    public Float getMax(Float firstValue, Float secondValue, Float thirdValue) {
-        Float max = firstValue;
-        if (secondValue.compareTo(max) > 0)
-            max = secondValue;
-        if (thirdValue.compareTo(max) > 0)
-            max = thirdValue;
-
-        return max;
-    }
-
-    /**
-     * UC3 Given three strings find the maximum
-     *
-     * @author prem
-     * @version 11.3
-     * @since 23/08/2021
-     */
-
-    public String getMax(String firstValue, String secondValue, String thirdValue) {
-        String max = firstValue;
+    public <E extends Comparable<E>> E getMax(E firstValue, E secondValue, E thirdValue) {
+        E max = firstValue;
         if (secondValue.compareTo(max) > 0)
             max = secondValue;
         if (thirdValue.compareTo(max) > 0)
@@ -68,7 +32,11 @@ public class FindMaximum {
     public static void main(String[] args) {
 
         FindMaximum maximum = new FindMaximum();
-        System.out.println("Maximum Value:");
+        System.out.println("Maximum Value Of Integer:");
+        System.out.println(maximum.getMax(50, 20, 70));
+        System.out.println("Maximum Value Of Flot:");
+        System.out.println(maximum.getMax(15.3f, 45.5f, 13.2f));
+        System.out.println("Maximum Value Of String:");
         System.out.println(maximum.getMax("Apple", "Peach", "Banana"));
 
     }
