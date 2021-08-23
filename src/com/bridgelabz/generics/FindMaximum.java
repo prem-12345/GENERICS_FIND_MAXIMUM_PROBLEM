@@ -47,11 +47,29 @@ public class FindMaximum {
         return max;
     }
 
+    /**
+     * UC3 Given three strings find the maximum
+     *
+     * @author prem
+     * @version 11.3
+     * @since 23/08/2021
+     */
+
+    public String getMax(String firstValue, String secondValue, String thirdValue) {
+        String max = firstValue;
+        if (secondValue.compareTo(max) > 0)
+            max = secondValue;
+        if (thirdValue.compareTo(max) > 0)
+            max = thirdValue;
+
+        return max;
+    }
+
     public static void main(String[] args) {
 
         FindMaximum maximum = new FindMaximum();
         System.out.println("Maximum Value:");
-        System.out.println(maximum.getMax(12.3f, 15.8f, 85.3f));
+        System.out.println(maximum.getMax("Apple", "Peach", "Banana"));
 
     }
 
